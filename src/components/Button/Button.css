@@ -1,0 +1,21 @@
+button {
+    text-transform: uppercase;
+    padding: 1.6rem 2.4rem;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    opacity: .9;
+    flex: 1; /*Ocupa o maximo de espaço possivel no flex */
+}
+
+#calc-btn {
+    background-color: rgb(74, 30, 116);
+}
+
+#clear-btn {
+    background-color: #444;
+}
+
+button:hover {
+    opacity: 1;
+}
