@@ -2,11 +2,11 @@ import Button from "../Button/Button"
 import './ImcInfo.css'
 
 
-const ImcInfo = ( { data, imc, info, infoClass }) => {
+const ImcInfo = ( { data, imc, info, infoClass, resetCalculator }) => {
 
   return <div id="result-container">
     <p id="imc-number">
-        Seu Imc: <span className={infoClass}>{imc}</span>
+        Seu Imc: {imc}
     </p>
     <p id="imc-info">
         Situação atual: {info} 
@@ -26,7 +26,7 @@ const ImcInfo = ( { data, imc, info, infoClass }) => {
             </div>
         ))}
     </div>
-    <Button id='back-btn' text='voltar'/>
+    <Button id='back-btn' text='voltar' action={resetCalculator}/>
   </div>
 }
 

@@ -27,9 +27,17 @@ function App() {
     data.forEach((item) => {
       if(imcResult >= item.min && imcResult <= item.max) {
         setInfo(item.info)
+        setInfoClass(item.infoClass)
       }
     })
+  }
 
+  const resetCalculator = (e) => {
+    e.preventDefault()
+
+    setImc('')
+    setInfo('')
+    setInfoClass('')
   }
 
   return (
@@ -38,7 +46,7 @@ function App() {
       {!imc ? (
           <ImcCalc calcImc={calcImc}/>
       ) : (
-        <ImcInfo data={data} imc={imc} info={info} infoClass={infoClass} />
+        <ImcInfo data={data} imc={imc} info={info} infoClass={infoClass} resetCalculator={resetCalculator}/>
       )}
       
      </div>
