@@ -16,6 +16,11 @@ button {
     background-color: #444;
 }
 
+#back-btn {
+    background-color: rgb(250, 38, 38);
+    align-self: center;
+}
+
 button:hover {
     opacity: 1;
 }
