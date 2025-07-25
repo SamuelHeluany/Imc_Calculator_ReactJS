@@ -12,6 +12,27 @@ const ImcCalc = () => {
         setWeight('')
     }
 
+    // Validar digitos, de 0 a 9 e virgula. O resto substitui por nada
+    const validDigits = (text) => {
+        return text.replace(/[^0-9,]/g, '')
+    }
+
+    const handleHeightChange = (e) => {
+        // os digitos validos vão ser o que foi digitado
+        const updateValue = validDigits(e.target.value)
+
+        // e a mudança de estado vão ser os digitos validos
+        setHeight(updateValue)
+    }
+
+    const handleWeightChange = (e) => {
+        // os digitos validos vão ser o que foi digitado
+        const updateValue = validDigits(e.target.value)
+
+        // e a mudança de estado vão ser os digitos validos
+        setWeight(updateValue)
+    }
+
   return (
   <div id="calc-container">
     <h2>Calculadora de IMC</h2>
@@ -20,22 +41,22 @@ const ImcCalc = () => {
             <div id="form-control">
                 <label htmlFor="height">Altura:</label>
                 <input 
-                type="number" 
+                type="text" 
                 name="height" 
                 id="height" 
                 placeholder='Exemplo 1,75'
-                onChange={(e) => setHeight(e.target.value)}
+                onChange={(e) => handleHeightChange(e)}
                 value={height}
                 />
             </div>
             <div id="form-control">
                 <label htmlFor="weight">Peso:</label>
                 <input 
-                type="number" 
+                type="text" 
                 name="weight" 
                 id="weight" 
                 placeholder='Exemplo 71,8'
-                onChange={(e) => setWeight(e.target.value)}
+                onChange={(e) => handleWeightChange(e)}
                 value={weight}
                 />
             </div>
